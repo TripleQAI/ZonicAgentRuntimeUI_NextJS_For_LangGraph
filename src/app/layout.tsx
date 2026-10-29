@@ -1,13 +1,14 @@
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import type { ReactNode } from 'react';
+import { withBasePath } from '@/lib/config/runtime';
 import { t } from '@/lib/i18n/t';
 import '@/styles/globals.css';
 import { Providers } from './providers';
 
 export const metadata: Metadata = {
   title: t('app.name'),
-  icons: { icon: '/favicon.png' },
+  icons: { icon: withBasePath('/favicon.png') },
 };
 
 export default async function RootLayout({ children }: { children: ReactNode }) {

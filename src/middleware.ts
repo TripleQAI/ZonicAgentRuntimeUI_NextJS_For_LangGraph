@@ -1,11 +1,18 @@
 import { NextResponse, type NextFetchEvent, type NextRequest } from 'next/server';
 import { auth } from '@/auth';
-import { cspConfig } from '@/lib/config/runtime';
+import { cspConfig, publicConfig, withBasePath } from '@/lib/config/runtime';
 import { contentSecurityPolicy, newNonce } from '@/lib/security/csp';
 
 /** Pages a signed-out user may open. */
 const PUBLIC_PAGES = new Set(['/login']);
 const CSP = 'content-security-policy';
+
+/** A request path as a path of the app: without the base path, when it still has it. */
+function appPath(pathname: string): string {
+  const { basePath } = publicConfig;
+  if (!basePath || (pathname !== basePath && !pathname.startsWith(`${basePath}/`))) return pathname;
+  return pathname.slice(basePath.length) || '/';
+}
 
 /**
  * Every page gets the Content Security Policy with a fresh nonce (task P6-01): on the request, so
@@ -15,12 +22,13 @@ const CSP = 'content-security-policy';
  */
 const guard = auth((request) => {
   const policy = contentSecurityPolicy(newNonce(), cspConfig());
-  if (!request.auth?.user && !PUBLIC_PAGES.has(request.nextUrl.pathname)) {
-    const signIn = request.nextUrl.clone();
-    signIn.pathname = '/login';
-    signIn.search = '';
+  const pathname = appPath(request.nextUrl.pathname);
+  if (!request.auth?.user && !PUBLIC_PAGES.has(pathname)) {
+    // With AUTH_URL set, Auth.js hands over the request rebuilt on that URL's origin, the public
+    // one, but without Next.js's base path handling: the path still starts with the base path.
+    const signIn = new URL(withBasePath('/login'), request.nextUrl.origin);
     // A path, not the URL: behind a load balancer the request's own host is the container's.
-    signIn.searchParams.set('callbackUrl', `${request.nextUrl.pathname}${request.nextUrl.search}`);
+    signIn.searchParams.set('callbackUrl', `${pathname}${request.nextUrl.search}`);
     const redirect = NextResponse.redirect(signIn);
     redirect.headers.set(CSP, policy);
     return redirect;

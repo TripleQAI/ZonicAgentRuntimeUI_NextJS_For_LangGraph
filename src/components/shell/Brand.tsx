@@ -1,3 +1,4 @@
+import { withBasePath } from '@/lib/config/runtime';
 import { t } from '@/lib/i18n/t';
 
 /**
@@ -9,7 +10,7 @@ export function Brand({ product = false, size = 'md' }: { product?: boolean; siz
   return (
     <span className="flex items-center gap-2.5" aria-label={product ? t('brand.productName') : t('brand.name')} role="img">
       {/* eslint-disable-next-line @next/next/no-img-element -- static brand asset, no optimisation needed */}
-      <img src="/tripleq-logo.png" alt="" width={73} height={71} className={large ? 'h-10 w-auto' : 'h-7 w-auto'} />
+      <img src={withBasePath('/tripleq-logo.png')} alt="" width={73} height={71} className={large ? 'h-10 w-auto' : 'h-7 w-auto'} />
       <span aria-hidden className={`wordmark ${large ? 'text-2xl' : 'text-lg'}`}>
         <span className="font-light">{t('brand.wordmarkStart')}</span>
         <span className="font-bold text-primary">{t('brand.wordmarkAccent')}</span>

@@ -2,7 +2,7 @@ import NextAuth from 'next-auth';
 import type { JWT } from 'next-auth/jwt';
 import { OIDC_PROVIDER_ID, oidcProvider } from '@/lib/auth/provider';
 import { refreshIfExpired, refreshWithIssuer, type REFRESH_ERROR } from '@/lib/auth/refresh';
-import { serverConfig } from '@/lib/config/runtime';
+import { serverConfig, withBasePath } from '@/lib/config/runtime';
 
 /**
  * Auth.js with one configurable OIDC provider (decision Q1: the Cognito user pool for local and
@@ -25,7 +25,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth(() => {
   const { auth: oidc } = serverConfig();
   return {
     providers: [oidcProvider(oidc)],
-    pages: { signIn: '/login' },
+    pages: { signIn: withBasePath('/login') },
     session: { strategy: 'jwt' },
     callbacks: {
       async jwt({ token, account }): Promise<JWT> {

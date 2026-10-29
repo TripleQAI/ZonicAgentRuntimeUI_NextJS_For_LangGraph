@@ -40,6 +40,12 @@ export interface StreamConfig {
 }
 
 export interface PublicConfig {
+  /**
+   * The path the app is served under, such as /agent-runtime-lg; empty at the root (next.config.ts,
+   * NEXT_BASE_PATH). Next.js adds it to links, router pushes and its own redirects; withBasePath adds
+   * it everywhere else.
+   */
+  basePath: string;
   /** Same-origin path of the runtime proxy route. */
   apiBasePath: string;
   features: {
@@ -100,8 +106,17 @@ export function cspConfig(env: NodeJS.ProcessEnv = process.env): CspConfig {
 }
 
 // Next.js inlines NEXT_PUBLIC_ values at build time only when they are read by their full name.
+const BASE_PATH = (process.env.NEXT_PUBLIC_BASE_PATH ?? '').replace(/\/+$/, '');
+
+/**
+ * A path of this app as the browser must request it, for what Next.js does not prefix itself:
+ * files in public/, and the redirect targets given to Auth.js, which adds only the origin.
+ */
+export const withBasePath = (path: string): string => `${BASE_PATH}${path}`;
+
 export const publicConfig: PublicConfig = {
-  apiBasePath: '/api/runtime',
+  basePath: BASE_PATH,
+  apiBasePath: withBasePath('/api/runtime'),
   features: {
     attachments: process.env.NEXT_PUBLIC_FEATURE_ATTACHMENTS === 'true',
   },

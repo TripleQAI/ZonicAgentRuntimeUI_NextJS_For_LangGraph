@@ -1,6 +1,7 @@
 import { OIDC_PROVIDER_ID, signIn } from '@/auth';
 import { Brand } from '@/components/shell/Brand';
 import { Footer } from '@/components/shell/Footer';
+import { withBasePath } from '@/lib/config/runtime';
 import { t } from '@/lib/i18n/t';
 
 /** The sign-in page (task U0-02): one action, the configured OIDC provider. */
@@ -25,7 +26,9 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
             className="mt-6"
             action={async () => {
               'use server';
-              await signIn(OIDC_PROVIDER_ID, { redirectTo: callbackUrl ?? '/' });
+              // The middleware's callbackUrl is a path of the app, without the base path.
+              const back = callbackUrl?.startsWith('/') ? callbackUrl : '/';
+              await signIn(OIDC_PROVIDER_ID, { redirectTo: withBasePath(back) });
             }}
           >
             <button type="submit" className="btn-primary w-full py-3">

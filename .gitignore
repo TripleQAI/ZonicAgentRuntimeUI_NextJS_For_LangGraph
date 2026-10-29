@@ -12,3 +12,7 @@ next-env.d.ts
 
 # End-to-end session cookies and tokens (tests/e2e/global-setup.ts)
 tests/e2e/.auth/
+
+# deploy/aws-lambda/cdk
+deploy/aws-lambda/cdk/node_modules/
+deploy/aws-lambda/cdk/cdk.out/

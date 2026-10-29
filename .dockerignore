@@ -8,3 +8,4 @@ coverage
 test-results
 playwright-report
 tests/e2e/.auth
+deploy/aws-lambda/cdk

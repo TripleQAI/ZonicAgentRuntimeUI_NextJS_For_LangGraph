@@ -5,6 +5,7 @@ import { SignInPrompt } from '@/components/auth/SignInPrompt';
 import { AppShell } from '@/components/shell/AppShell';
 import { SessionSidebar } from '@/components/sidebar/SessionSidebar';
 import { ErrorBoundary } from '@/components/shell/ErrorBoundary';
+import { withBasePath } from '@/lib/config/runtime';
 import { t } from '@/lib/i18n/t';
 
 /** The protected layout (task U0-02): every page under it needs a signed-in user. */
@@ -17,7 +18,7 @@ export default async function ProtectedLayout({ children }: { children: ReactNod
     <form
       action={async () => {
         'use server';
-        await signOut({ redirectTo: '/login' });
+        await signOut({ redirectTo: withBasePath('/login') });
       }}
     >
       <button type="submit" className="btn-ghost px-3 py-1.5">
