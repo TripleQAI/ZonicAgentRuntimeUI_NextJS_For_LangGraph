@@ -1,0 +1,63 @@
+{
+  "title": "GridPart",
+  "additionalProperties": false,
+  "description": "A server-mode grid paging through ``GET /v1/datasets/{datasetId}``.",
+  "properties": {
+    "columns": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Columns",
+      "type": "array"
+    },
+    "datasetRef": {
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/DatasetRef"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "features": {
+      "additionalProperties": true,
+      "title": "Features",
+      "type": "object"
+    },
+    "pageSize": {
+      "anyOf": [
+        {
+          "exclusiveMinimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Pagesize"
+    },
+    "title": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Title"
+    },
+    "type": {
+      "const": "grid",
+      "default": "grid",
+      "title": "Type",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

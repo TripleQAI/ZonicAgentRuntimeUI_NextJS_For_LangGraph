@@ -1,0 +1,25 @@
+{
+  "title": "SessionList",
+  "additionalProperties": false,
+  "properties": {
+    "items": {
+      "items": {
+        "$ref": "#/components/schemas/Session"
+      },
+      "title": "Items",
+      "type": "array"
+    },
+    "nextCursor": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Nextcursor"
+    }
+  },
+  "type": "object"
+}

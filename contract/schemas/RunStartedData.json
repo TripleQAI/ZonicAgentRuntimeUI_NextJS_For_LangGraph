@@ -1,0 +1,43 @@
+{
+  "title": "RunStartedData",
+  "additionalProperties": false,
+  "properties": {
+    "agenticWorkflowId": {
+      "title": "Agenticworkflowid",
+      "type": "string"
+    },
+    "revision": {
+      "title": "Revision",
+      "type": "string"
+    },
+    "sessionId": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Sessionid"
+    },
+    "title": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Title"
+    }
+  },
+  "required": [
+    "agenticWorkflowId",
+    "revision"
+  ],
+  "type": "object"
+}

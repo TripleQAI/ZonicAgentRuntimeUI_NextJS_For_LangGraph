@@ -1,0 +1,20 @@
+{
+  "title": "LoopIterationData",
+  "additionalProperties": false,
+  "properties": {
+    "iteration": {
+      "minimum": 1,
+      "title": "Iteration",
+      "type": "integer"
+    },
+    "loopId": {
+      "title": "Loopid",
+      "type": "string"
+    }
+  },
+  "required": [
+    "loopId",
+    "iteration"
+  ],
+  "type": "object"
+}

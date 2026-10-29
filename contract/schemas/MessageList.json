@@ -1,0 +1,25 @@
+{
+  "title": "MessageList",
+  "additionalProperties": false,
+  "properties": {
+    "items": {
+      "items": {
+        "$ref": "#/components/schemas/Message"
+      },
+      "title": "Items",
+      "type": "array"
+    },
+    "nextCursor": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Nextcursor"
+    }
+  },
+  "type": "object"
+}

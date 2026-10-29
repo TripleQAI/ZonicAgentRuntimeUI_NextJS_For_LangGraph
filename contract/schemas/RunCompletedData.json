@@ -1,0 +1,23 @@
+{
+  "title": "RunCompletedData",
+  "additionalProperties": false,
+  "properties": {
+    "result": {
+      "additionalProperties": true,
+      "title": "Result",
+      "type": "object"
+    },
+    "usage": {
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/Usage"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    }
+  },
+  "type": "object"
+}

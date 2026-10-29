@@ -1,0 +1,36 @@
+{
+  "title": "ChartPart",
+  "additionalProperties": false,
+  "description": "An ECharts option: data only, top-level keys on ``content.chartOptionKeys``, no functions.",
+  "properties": {
+    "datasetRef": {
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/DatasetRef"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "library": {
+      "const": "echarts",
+      "default": "echarts",
+      "title": "Library",
+      "type": "string"
+    },
+    "option": {
+      "additionalProperties": true,
+      "title": "Option",
+      "type": "object"
+    },
+    "type": {
+      "const": "chart",
+      "default": "chart",
+      "title": "Type",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

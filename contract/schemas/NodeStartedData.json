@@ -1,0 +1,30 @@
+{
+  "title": "NodeStartedData",
+  "additionalProperties": false,
+  "properties": {
+    "nodeName": {
+      "title": "Nodename",
+      "type": "string"
+    },
+    "nodeType": {
+      "title": "Nodetype",
+      "type": "string"
+    },
+    "resumed": {
+      "default": false,
+      "title": "Resumed",
+      "type": "boolean"
+    },
+    "visit": {
+      "minimum": 1,
+      "title": "Visit",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "nodeType",
+    "nodeName",
+    "visit"
+  ],
+  "type": "object"
+}

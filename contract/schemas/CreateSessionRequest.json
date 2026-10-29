@@ -1,0 +1,28 @@
+{
+  "title": "CreateSessionRequest",
+  "additionalProperties": false,
+  "properties": {
+    "agenticWorkflowId": {
+      "maxLength": 100,
+      "minLength": 1,
+      "title": "Agenticworkflowid",
+      "type": "string"
+    },
+    "title": {
+      "anyOf": [
+        {
+          "maxLength": 200,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Title"
+    }
+  },
+  "required": [
+    "agenticWorkflowId"
+  ],
+  "type": "object"
+}

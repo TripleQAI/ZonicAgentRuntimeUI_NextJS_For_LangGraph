@@ -1,0 +1,95 @@
+{
+  "title": "RunEvent",
+  "description": "Any run event, by ``type``.",
+  "discriminator": {
+    "mapping": {
+      "content.part": "#/components/schemas/ContentPartEvent",
+      "heartbeat": "#/components/schemas/HeartbeatEvent",
+      "interrupt.requested": "#/components/schemas/InterruptRequestedEvent",
+      "loop.iteration": "#/components/schemas/LoopIterationEvent",
+      "node.finished": "#/components/schemas/NodeFinishedEvent",
+      "node.started": "#/components/schemas/NodeStartedEvent",
+      "reasoning.delta": "#/components/schemas/ReasoningDeltaEvent",
+      "run.cancelled": "#/components/schemas/RunCancelledEvent",
+      "run.completed": "#/components/schemas/RunCompletedEvent",
+      "run.failed": "#/components/schemas/RunFailedEvent",
+      "run.started": "#/components/schemas/RunStartedEvent",
+      "run.waiting": "#/components/schemas/RunWaitingEvent",
+      "state.updated": "#/components/schemas/StateUpdatedEvent",
+      "stream.gap": "#/components/schemas/StreamGapEvent",
+      "swarm.handoff": "#/components/schemas/SwarmHandoffEvent",
+      "swarm.member.finished": "#/components/schemas/SwarmMemberFinishedEvent",
+      "swarm.member.started": "#/components/schemas/SwarmMemberStartedEvent",
+      "token.delta": "#/components/schemas/TokenDeltaEvent",
+      "tool.finished": "#/components/schemas/ToolFinishedEvent",
+      "tool.started": "#/components/schemas/ToolStartedEvent",
+      "warning": "#/components/schemas/WarningEvent"
+    },
+    "propertyName": "type"
+  },
+  "oneOf": [
+    {
+      "$ref": "#/components/schemas/RunStartedEvent"
+    },
+    {
+      "$ref": "#/components/schemas/NodeStartedEvent"
+    },
+    {
+      "$ref": "#/components/schemas/NodeFinishedEvent"
+    },
+    {
+      "$ref": "#/components/schemas/TokenDeltaEvent"
+    },
+    {
+      "$ref": "#/components/schemas/ReasoningDeltaEvent"
+    },
+    {
+      "$ref": "#/components/schemas/ToolStartedEvent"
+    },
+    {
+      "$ref": "#/components/schemas/ToolFinishedEvent"
+    },
+    {
+      "$ref": "#/components/schemas/SwarmMemberStartedEvent"
+    },
+    {
+      "$ref": "#/components/schemas/SwarmMemberFinishedEvent"
+    },
+    {
+      "$ref": "#/components/schemas/SwarmHandoffEvent"
+    },
+    {
+      "$ref": "#/components/schemas/LoopIterationEvent"
+    },
+    {
+      "$ref": "#/components/schemas/ContentPartEvent"
+    },
+    {
+      "$ref": "#/components/schemas/StateUpdatedEvent"
+    },
+    {
+      "$ref": "#/components/schemas/InterruptRequestedEvent"
+    },
+    {
+      "$ref": "#/components/schemas/WarningEvent"
+    },
+    {
+      "$ref": "#/components/schemas/RunWaitingEvent"
+    },
+    {
+      "$ref": "#/components/schemas/RunCompletedEvent"
+    },
+    {
+      "$ref": "#/components/schemas/RunFailedEvent"
+    },
+    {
+      "$ref": "#/components/schemas/RunCancelledEvent"
+    },
+    {
+      "$ref": "#/components/schemas/StreamGapEvent"
+    },
+    {
+      "$ref": "#/components/schemas/HeartbeatEvent"
+    }
+  ]
+}

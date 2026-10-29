@@ -1,0 +1,15 @@
+{
+  "title": "NodeVisitList",
+  "additionalProperties": false,
+  "description": "``GET /v1/runs/{id}/nodes``: one entry per node visit, in completion order; no outputs.",
+  "properties": {
+    "items": {
+      "items": {
+        "$ref": "#/components/schemas/TimelineEntry"
+      },
+      "title": "Items",
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

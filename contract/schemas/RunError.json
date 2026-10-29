@@ -1,0 +1,25 @@
+{
+  "title": "RunError",
+  "additionalProperties": false,
+  "description": "The user-safe error of a failed run: catalog code, message and retry flag.",
+  "properties": {
+    "code": {
+      "title": "Code",
+      "type": "string"
+    },
+    "message": {
+      "title": "Message",
+      "type": "string"
+    },
+    "retryable": {
+      "default": false,
+      "title": "Retryable",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "code",
+    "message"
+  ],
+  "type": "object"
+}

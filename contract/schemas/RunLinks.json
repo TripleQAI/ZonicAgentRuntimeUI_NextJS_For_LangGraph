@@ -1,0 +1,19 @@
+{
+  "title": "RunLinks",
+  "additionalProperties": false,
+  "properties": {
+    "events": {
+      "title": "Events",
+      "type": "string"
+    },
+    "self": {
+      "title": "Self",
+      "type": "string"
+    }
+  },
+  "required": [
+    "self",
+    "events"
+  ],
+  "type": "object"
+}

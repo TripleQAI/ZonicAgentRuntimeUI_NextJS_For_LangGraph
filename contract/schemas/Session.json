@@ -1,0 +1,51 @@
+{
+  "title": "Session",
+  "additionalProperties": false,
+  "properties": {
+    "agenticWorkflowId": {
+      "title": "Agenticworkflowid",
+      "type": "string"
+    },
+    "createdAt": {
+      "format": "date-time",
+      "title": "Createdat",
+      "type": "string"
+    },
+    "lastMessageAt": {
+      "format": "date-time",
+      "title": "Lastmessageat",
+      "type": "string"
+    },
+    "sessionId": {
+      "title": "Sessionid",
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "active",
+        "archived"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "title": {
+      "default": "",
+      "title": "Title",
+      "type": "string"
+    },
+    "updatedAt": {
+      "format": "date-time",
+      "title": "Updatedat",
+      "type": "string"
+    }
+  },
+  "required": [
+    "sessionId",
+    "agenticWorkflowId",
+    "status",
+    "createdAt",
+    "updatedAt",
+    "lastMessageAt"
+  ],
+  "type": "object"
+}

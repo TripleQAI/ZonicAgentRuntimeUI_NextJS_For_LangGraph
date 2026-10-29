@@ -1,0 +1,149 @@
+{
+  "title": "Trace",
+  "additionalProperties": false,
+  "description": "``GET /v1/runs/{runId}/trace``: the trace header, its observation tree and its scores.",
+  "properties": {
+    "agenticWorkflowId": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Agenticworkflowid"
+    },
+    "endTime": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Endtime"
+    },
+    "errorCount": {
+      "default": 0,
+      "title": "Errorcount",
+      "type": "integer"
+    },
+    "inputTokens": {
+      "default": 0,
+      "title": "Inputtokens",
+      "type": "integer"
+    },
+    "latencyMs": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Latencyms"
+    },
+    "name": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Name"
+    },
+    "observationCount": {
+      "default": 0,
+      "title": "Observationcount",
+      "type": "integer"
+    },
+    "observations": {
+      "items": {
+        "$ref": "#/components/schemas/TraceObservation"
+      },
+      "title": "Observations",
+      "type": "array"
+    },
+    "outputTokens": {
+      "default": 0,
+      "title": "Outputtokens",
+      "type": "integer"
+    },
+    "runId": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Runid"
+    },
+    "scores": {
+      "items": {
+        "$ref": "#/components/schemas/TraceScore"
+      },
+      "title": "Scores",
+      "type": "array"
+    },
+    "sessionId": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Sessionid"
+    },
+    "startTime": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Starttime"
+    },
+    "status": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Status"
+    },
+    "tags": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Tags",
+      "type": "array"
+    },
+    "totalCost": {
+      "default": 0,
+      "title": "Totalcost",
+      "type": "number"
+    },
+    "traceId": {
+      "title": "Traceid",
+      "type": "string"
+    }
+  },
+  "required": [
+    "traceId"
+  ],
+  "type": "object"
+}

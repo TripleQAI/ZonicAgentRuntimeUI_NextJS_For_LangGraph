@@ -1,0 +1,81 @@
+{
+  "title": "NodeFinishedData",
+  "additionalProperties": false,
+  "properties": {
+    "durationMs": {
+      "minimum": 0,
+      "title": "Durationms",
+      "type": "number"
+    },
+    "errorCode": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Errorcode"
+    },
+    "handles": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Handles",
+      "type": "array"
+    },
+    "outputSummary": {
+      "anyOf": [
+        {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Outputsummary"
+    },
+    "policy": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Policy"
+    },
+    "status": {
+      "enum": [
+        "succeeded",
+        "failed",
+        "interrupted",
+        "continued"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "usage": {
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/Usage"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    }
+  },
+  "required": [
+    "status",
+    "durationMs"
+  ],
+  "type": "object"
+}

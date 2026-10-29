@@ -1,0 +1,44 @@
+{
+  "title": "CardPart",
+  "additionalProperties": false,
+  "properties": {
+    "actions": {
+      "items": {
+        "$ref": "#/components/schemas/CardAction"
+      },
+      "title": "Actions",
+      "type": "array"
+    },
+    "body": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Body"
+    },
+    "fields": {
+      "items": {
+        "$ref": "#/components/schemas/CardField"
+      },
+      "title": "Fields",
+      "type": "array"
+    },
+    "title": {
+      "default": "",
+      "title": "Title",
+      "type": "string"
+    },
+    "type": {
+      "const": "card",
+      "default": "card",
+      "title": "Type",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

@@ -1,0 +1,2 @@
+# Every text file is LF in the index and in the working tree, on every OS. gen:check compares bytes.
+* text=auto eol=lf

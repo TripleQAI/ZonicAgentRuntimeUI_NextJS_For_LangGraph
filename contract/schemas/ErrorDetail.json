@@ -1,0 +1,31 @@
+{
+  "title": "ErrorDetail",
+  "additionalProperties": false,
+  "description": "One validation problem: the request path and a short message; never internal details.",
+  "properties": {
+    "message": {
+      "title": "Message",
+      "type": "string"
+    },
+    "path": {
+      "title": "Path",
+      "type": "string"
+    },
+    "type": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Type"
+    }
+  },
+  "required": [
+    "path",
+    "message"
+  ],
+  "type": "object"
+}

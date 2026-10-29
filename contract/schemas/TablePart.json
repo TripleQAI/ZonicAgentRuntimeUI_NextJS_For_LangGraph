@@ -1,0 +1,52 @@
+{
+  "title": "TablePart",
+  "additionalProperties": false,
+  "description": "Rows inline, at most ``content.inlineRowLimit``.",
+  "properties": {
+    "columns": {
+      "items": {
+        "$ref": "#/components/schemas/TableColumn"
+      },
+      "title": "Columns",
+      "type": "array"
+    },
+    "datasetRef": {
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/DatasetRef"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "rows": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Rows",
+      "type": "array"
+    },
+    "title": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Title"
+    },
+    "type": {
+      "const": "table",
+      "default": "table",
+      "title": "Type",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

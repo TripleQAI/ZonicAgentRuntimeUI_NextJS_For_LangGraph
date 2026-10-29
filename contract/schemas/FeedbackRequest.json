@@ -1,0 +1,28 @@
+{
+  "title": "FeedbackRequest",
+  "additionalProperties": false,
+  "properties": {
+    "comment": {
+      "anyOf": [
+        {
+          "maxLength": 2000,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Comment"
+    },
+    "rating": {
+      "maximum": 5,
+      "minimum": -1,
+      "title": "Rating",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "rating"
+  ],
+  "type": "object"
+}

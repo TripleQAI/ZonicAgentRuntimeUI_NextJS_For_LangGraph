@@ -1,0 +1,34 @@
+{
+  "title": "UpdateSessionRequest",
+  "additionalProperties": false,
+  "properties": {
+    "status": {
+      "anyOf": [
+        {
+          "enum": [
+            "active",
+            "archived"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Status"
+    },
+    "title": {
+      "anyOf": [
+        {
+          "maxLength": 200,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Title"
+    }
+  },
+  "type": "object"
+}

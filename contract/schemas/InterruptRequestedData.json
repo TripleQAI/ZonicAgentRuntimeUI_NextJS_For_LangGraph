@@ -1,0 +1,48 @@
+{
+  "title": "InterruptRequestedData",
+  "additionalProperties": false,
+  "properties": {
+    "expiresAt": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Expiresat"
+    },
+    "interruptId": {
+      "title": "Interruptid",
+      "type": "string"
+    },
+    "kind": {
+      "title": "Kind",
+      "type": "string"
+    },
+    "prompt": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Prompt"
+    },
+    "schema": {
+      "additionalProperties": true,
+      "title": "Schema",
+      "type": "object"
+    }
+  },
+  "required": [
+    "interruptId",
+    "kind"
+  ],
+  "type": "object"
+}

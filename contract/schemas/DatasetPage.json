@@ -1,0 +1,53 @@
+{
+  "title": "DatasetPage",
+  "additionalProperties": false,
+  "description": "``GET /v1/datasets/{datasetId}``: one page of a dataset's rows, filtered and sorted.",
+  "properties": {
+    "columns": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Columns",
+      "type": "array"
+    },
+    "datasetId": {
+      "title": "Datasetid",
+      "type": "string"
+    },
+    "kind": {
+      "title": "Kind",
+      "type": "string"
+    },
+    "page": {
+      "minimum": 1,
+      "title": "Page",
+      "type": "integer"
+    },
+    "pageSize": {
+      "minimum": 1,
+      "title": "Pagesize",
+      "type": "integer"
+    },
+    "rows": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Rows",
+      "type": "array"
+    },
+    "total": {
+      "minimum": 0,
+      "title": "Total",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "datasetId",
+    "kind",
+    "total",
+    "page",
+    "pageSize"
+  ],
+  "type": "object"
+}

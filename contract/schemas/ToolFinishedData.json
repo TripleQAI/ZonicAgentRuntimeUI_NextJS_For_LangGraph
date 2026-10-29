@@ -1,0 +1,48 @@
+{
+  "title": "ToolFinishedData",
+  "additionalProperties": false,
+  "properties": {
+    "durationMs": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Durationms"
+    },
+    "member": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Member"
+    },
+    "status": {
+      "enum": [
+        "success",
+        "error"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "toolUseId": {
+      "title": "Tooluseid",
+      "type": "string"
+    }
+  },
+  "required": [
+    "toolUseId",
+    "status"
+  ],
+  "type": "object"
+}

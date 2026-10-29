@@ -1,0 +1,48 @@
+{
+  "title": "ErrorBody",
+  "additionalProperties": false,
+  "properties": {
+    "code": {
+      "title": "Code",
+      "type": "string"
+    },
+    "details": {
+      "items": {
+        "$ref": "#/components/schemas/ErrorDetail"
+      },
+      "title": "Details",
+      "type": "array"
+    },
+    "message": {
+      "title": "Message",
+      "type": "string"
+    },
+    "retryable": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Retryable"
+    },
+    "traceId": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Traceid"
+    }
+  },
+  "required": [
+    "code",
+    "message"
+  ],
+  "type": "object"
+}

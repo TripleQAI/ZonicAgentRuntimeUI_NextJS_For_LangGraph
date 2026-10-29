@@ -1,0 +1,14 @@
+{
+  "title": "RunWaitingData",
+  "additionalProperties": false,
+  "properties": {
+    "interruptIds": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Interruptids",
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

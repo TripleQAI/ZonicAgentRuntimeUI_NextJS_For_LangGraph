@@ -1,0 +1,26 @@
+{
+  "title": "TextDeltaData",
+  "additionalProperties": false,
+  "properties": {
+    "member": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Member"
+    },
+    "text": {
+      "title": "Text",
+      "type": "string"
+    }
+  },
+  "required": [
+    "text"
+  ],
+  "type": "object"
+}

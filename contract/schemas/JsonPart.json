@@ -1,0 +1,17 @@
+{
+  "title": "JsonPart",
+  "additionalProperties": false,
+  "properties": {
+    "type": {
+      "const": "json",
+      "default": "json",
+      "title": "Type",
+      "type": "string"
+    },
+    "value": {
+      "default": null,
+      "title": "Value"
+    }
+  },
+  "type": "object"
+}

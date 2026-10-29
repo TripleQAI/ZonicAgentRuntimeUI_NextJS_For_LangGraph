@@ -1,0 +1,56 @@
+{
+  "title": "SwarmMemberData",
+  "additionalProperties": false,
+  "description": "A member step of a Swarm node; ``status``, ``durationMs`` and ``usage`` when it finished.",
+  "properties": {
+    "durationMs": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Durationms"
+    },
+    "member": {
+      "title": "Member",
+      "type": "string"
+    },
+    "status": {
+      "anyOf": [
+        {
+          "enum": [
+            "completed",
+            "failed",
+            "cancelled"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Status"
+    },
+    "usage": {
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/Usage"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    }
+  },
+  "required": [
+    "member"
+  ],
+  "type": "object"
+}

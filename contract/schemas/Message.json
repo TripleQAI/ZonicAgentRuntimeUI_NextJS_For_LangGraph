@@ -1,0 +1,88 @@
+{
+  "title": "Message",
+  "additionalProperties": false,
+  "properties": {
+    "contentParts": {
+      "items": {},
+      "title": "Contentparts",
+      "type": "array"
+    },
+    "createdAt": {
+      "format": "date-time",
+      "title": "Createdat",
+      "type": "string"
+    },
+    "feedbackRating": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Feedbackrating"
+    },
+    "kind": {
+      "title": "Kind",
+      "type": "string"
+    },
+    "messageId": {
+      "title": "Messageid",
+      "type": "string"
+    },
+    "nodeId": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Nodeid"
+    },
+    "role": {
+      "title": "Role",
+      "type": "string"
+    },
+    "runId": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Runid"
+    },
+    "seq": {
+      "title": "Seq",
+      "type": "integer"
+    },
+    "sessionId": {
+      "title": "Sessionid",
+      "type": "string"
+    },
+    "textPreview": {
+      "default": "",
+      "title": "Textpreview",
+      "type": "string"
+    },
+    "visibility": {
+      "title": "Visibility",
+      "type": "string"
+    }
+  },
+  "required": [
+    "messageId",
+    "sessionId",
+    "seq",
+    "role",
+    "kind",
+    "visibility",
+    "createdAt"
+  ],
+  "type": "object"
+}

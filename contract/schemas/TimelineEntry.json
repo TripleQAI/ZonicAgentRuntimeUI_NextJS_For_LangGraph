@@ -1,0 +1,78 @@
+{
+  "title": "TimelineEntry",
+  "additionalProperties": false,
+  "description": "Compact per-visit record, saved at turn end.",
+  "properties": {
+    "durationMs": {
+      "minimum": 0,
+      "title": "Durationms",
+      "type": "number"
+    },
+    "errorCode": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Errorcode"
+    },
+    "handles": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Handles",
+      "type": "array"
+    },
+    "nodeId": {
+      "title": "Nodeid",
+      "type": "string"
+    },
+    "nodeType": {
+      "title": "Nodetype",
+      "type": "string"
+    },
+    "path": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Path"
+    },
+    "startedAt": {
+      "format": "date-time",
+      "title": "Startedat",
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "succeeded",
+        "failed",
+        "interrupted",
+        "continued"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "visit": {
+      "minimum": 1,
+      "title": "Visit",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "nodeId",
+    "nodeType",
+    "visit",
+    "status",
+    "startedAt",
+    "durationMs"
+  ],
+  "type": "object"
+}

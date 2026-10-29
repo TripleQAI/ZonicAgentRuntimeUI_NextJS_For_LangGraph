@@ -1,0 +1,38 @@
+{
+  "title": "RunAccepted",
+  "additionalProperties": false,
+  "description": "``202``: the run goes on; poll ``links.self`` or follow ``links.events``.",
+  "properties": {
+    "links": {
+      "$ref": "#/components/schemas/RunLinks"
+    },
+    "runId": {
+      "title": "Runid",
+      "type": "string"
+    },
+    "sessionId": {
+      "title": "Sessionid",
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "queued",
+        "running",
+        "waiting_input",
+        "succeeded",
+        "failed",
+        "cancelled",
+        "timed_out"
+      ],
+      "title": "Status",
+      "type": "string"
+    }
+  },
+  "required": [
+    "runId",
+    "sessionId",
+    "status",
+    "links"
+  ],
+  "type": "object"
+}

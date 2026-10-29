@@ -1,0 +1,44 @@
+{
+  "title": "ToolStartedData",
+  "additionalProperties": false,
+  "properties": {
+    "inputSummary": {
+      "anyOf": [
+        {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Inputsummary"
+    },
+    "member": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Member"
+    },
+    "toolName": {
+      "title": "Toolname",
+      "type": "string"
+    },
+    "toolUseId": {
+      "title": "Tooluseid",
+      "type": "string"
+    }
+  },
+  "required": [
+    "toolName",
+    "toolUseId"
+  ],
+  "type": "object"
+}

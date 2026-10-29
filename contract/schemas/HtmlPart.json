@@ -1,0 +1,26 @@
+{
+  "title": "HtmlPart",
+  "additionalProperties": false,
+  "description": "A builder ``htmlTemplate`` view, sanitized on the server; shown in a sandboxed ``iframe``.",
+  "properties": {
+    "datasetRefs": {
+      "items": {
+        "$ref": "#/components/schemas/DatasetRef"
+      },
+      "title": "Datasetrefs",
+      "type": "array"
+    },
+    "html": {
+      "default": "",
+      "title": "Html",
+      "type": "string"
+    },
+    "type": {
+      "const": "html",
+      "default": "html",
+      "title": "Type",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

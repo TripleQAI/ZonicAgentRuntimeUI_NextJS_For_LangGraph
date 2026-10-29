@@ -1,0 +1,38 @@
+{
+  "title": "TableColumn",
+  "additionalProperties": false,
+  "properties": {
+    "key": {
+      "title": "Key",
+      "type": "string"
+    },
+    "label": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Label"
+    },
+    "type": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Type"
+    }
+  },
+  "required": [
+    "key"
+  ],
+  "type": "object"
+}

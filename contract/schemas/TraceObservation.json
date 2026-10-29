@@ -1,0 +1,185 @@
+{
+  "title": "TraceObservation",
+  "additionalProperties": false,
+  "properties": {
+    "children": {
+      "items": {
+        "$ref": "#/components/schemas/TraceObservation"
+      },
+      "title": "Children",
+      "type": "array"
+    },
+    "endTime": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Endtime"
+    },
+    "input": {
+      "title": "Input"
+    },
+    "latencyMs": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Latencyms"
+    },
+    "level": {
+      "default": "DEFAULT",
+      "title": "Level",
+      "type": "string"
+    },
+    "metadata": {
+      "additionalProperties": true,
+      "title": "Metadata",
+      "type": "object"
+    },
+    "model": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Model"
+    },
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "nodeId": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Nodeid"
+    },
+    "nodeName": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Nodename"
+    },
+    "nodeType": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Nodetype"
+    },
+    "observationId": {
+      "title": "Observationid",
+      "type": "string"
+    },
+    "output": {
+      "title": "Output"
+    },
+    "parentObservationId": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Parentobservationid"
+    },
+    "path": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Path"
+    },
+    "startTime": {
+      "default": "",
+      "title": "Starttime",
+      "type": "string"
+    },
+    "statusMessage": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Statusmessage"
+    },
+    "totalCost": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Totalcost"
+    },
+    "type": {
+      "title": "Type",
+      "type": "string"
+    },
+    "usage": {
+      "anyOf": [
+        {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Usage"
+    },
+    "visit": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Visit"
+    }
+  },
+  "required": [
+    "observationId",
+    "type",
+    "name"
+  ],
+  "type": "object"
+}

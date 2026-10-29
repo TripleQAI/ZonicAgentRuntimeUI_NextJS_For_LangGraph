@@ -1,0 +1,6 @@
+{
+  "title": "HeartbeatData",
+  "additionalProperties": false,
+  "properties": {},
+  "type": "object"
+}

@@ -1,0 +1,66 @@
+{
+  "title": "RunResult",
+  "additionalProperties": false,
+  "description": "``POST /v1/runs`` in ``sync`` mode: the finished turn (``200``).",
+  "properties": {
+    "error": {
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/RunError"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "result": {
+      "anyOf": [
+        {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Result"
+    },
+    "runId": {
+      "title": "Runid",
+      "type": "string"
+    },
+    "sessionId": {
+      "title": "Sessionid",
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "queued",
+        "running",
+        "waiting_input",
+        "succeeded",
+        "failed",
+        "cancelled",
+        "timed_out"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "usage": {
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/Usage"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "runId",
+    "sessionId",
+    "status"
+  ],
+  "type": "object"
+}

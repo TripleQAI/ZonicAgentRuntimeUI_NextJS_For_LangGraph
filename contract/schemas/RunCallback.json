@@ -1,0 +1,23 @@
+{
+  "title": "RunCallback",
+  "additionalProperties": false,
+  "description": "Where an ``async`` run's completion summary is posted (P4-05): an allow-listed URL, signed\nwith the HMAC key the secret reference names.",
+  "properties": {
+    "secretRef": {
+      "pattern": "^secret:[A-Za-z0-9_.-]+$",
+      "title": "Secretref",
+      "type": "string"
+    },
+    "url": {
+      "maxLength": 2000,
+      "minLength": 1,
+      "title": "Url",
+      "type": "string"
+    }
+  },
+  "required": [
+    "url",
+    "secretRef"
+  ],
+  "type": "object"
+}

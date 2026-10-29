@@ -1,0 +1,18 @@
+{
+  "title": "CardField",
+  "additionalProperties": false,
+  "properties": {
+    "label": {
+      "title": "Label",
+      "type": "string"
+    },
+    "value": {
+      "default": null,
+      "title": "Value"
+    }
+  },
+  "required": [
+    "label"
+  ],
+  "type": "object"
+}

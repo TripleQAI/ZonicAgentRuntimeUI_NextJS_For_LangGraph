@@ -1,0 +1,17 @@
+{
+  "title": "RunOptions",
+  "additionalProperties": false,
+  "properties": {
+    "callback": {
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/RunCallback"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "type": "object"
+}

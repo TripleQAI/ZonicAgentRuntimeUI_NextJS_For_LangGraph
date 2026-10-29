@@ -1,0 +1,14 @@
+{
+  "title": "StateUpdatedData",
+  "additionalProperties": false,
+  "properties": {
+    "keys": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Keys",
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

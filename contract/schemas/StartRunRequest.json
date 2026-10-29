@@ -1,0 +1,58 @@
+{
+  "title": "StartRunRequest",
+  "additionalProperties": false,
+  "properties": {
+    "agenticWorkflowId": {
+      "anyOf": [
+        {
+          "maxLength": 100,
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Agenticworkflowid"
+    },
+    "input": {
+      "$ref": "#/components/schemas/RunInput"
+    },
+    "mode": {
+      "enum": [
+        "stream",
+        "sync",
+        "async"
+      ],
+      "title": "Mode",
+      "type": "string"
+    },
+    "options": {
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/RunOptions"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "sessionId": {
+      "anyOf": [
+        {
+          "format": "uuid",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Sessionid"
+    }
+  },
+  "required": [
+    "input",
+    "mode"
+  ],
+  "type": "object"
+}

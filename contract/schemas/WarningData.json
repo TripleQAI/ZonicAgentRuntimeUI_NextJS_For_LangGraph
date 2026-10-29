@@ -1,0 +1,24 @@
+{
+  "title": "WarningData",
+  "additionalProperties": false,
+  "properties": {
+    "code": {
+      "title": "Code",
+      "type": "string"
+    },
+    "details": {
+      "additionalProperties": true,
+      "title": "Details",
+      "type": "object"
+    },
+    "message": {
+      "default": "",
+      "title": "Message",
+      "type": "string"
+    }
+  },
+  "required": [
+    "code"
+  ],
+  "type": "object"
+}

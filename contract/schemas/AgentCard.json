@@ -1,0 +1,64 @@
+{
+  "title": "AgentCard",
+  "additionalProperties": false,
+  "properties": {
+    "agenticWorkflowId": {
+      "title": "Agenticworkflowid",
+      "type": "string"
+    },
+    "bpc": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Bpc"
+    },
+    "description": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Description"
+    },
+    "displayName": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Displayname"
+    },
+    "name": {
+      "default": "",
+      "title": "Name",
+      "type": "string"
+    },
+    "updatedAt": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Updatedat"
+    }
+  },
+  "required": [
+    "agenticWorkflowId"
+  ],
+  "type": "object"
+}

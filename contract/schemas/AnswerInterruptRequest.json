@@ -1,0 +1,24 @@
+{
+  "title": "AnswerInterruptRequest",
+  "additionalProperties": false,
+  "description": "``POST /v1/runs/{runId}/interrupts/{interruptId}``: the answer, checked against the\ninterrupt's ``answerSchema``, and the mode the resumed turn runs in.",
+  "properties": {
+    "answer": {
+      "title": "Answer"
+    },
+    "mode": {
+      "default": "stream",
+      "enum": [
+        "stream",
+        "sync",
+        "async"
+      ],
+      "title": "Mode",
+      "type": "string"
+    }
+  },
+  "required": [
+    "answer"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,70 @@
+{
+  "title": "ContentPartData",
+  "additionalProperties": false,
+  "description": "One content part a node produced (views), also kept in the turn's answer message.",
+  "properties": {
+    "part": {
+      "discriminator": {
+        "mapping": {
+          "card": "#/components/schemas/CardPart",
+          "chart": "#/components/schemas/ChartPart",
+          "citation": "#/components/schemas/CitationPart",
+          "error": "#/components/schemas/ErrorPart",
+          "file": "#/components/schemas/FilePart",
+          "form": "#/components/schemas/FormPart",
+          "grid": "#/components/schemas/GridPart",
+          "html": "#/components/schemas/HtmlPart",
+          "json": "#/components/schemas/JsonPart",
+          "markdown": "#/components/schemas/MarkdownPart",
+          "table": "#/components/schemas/TablePart"
+        },
+        "propertyName": "type"
+      },
+      "oneOf": [
+        {
+          "$ref": "#/components/schemas/MarkdownPart"
+        },
+        {
+          "$ref": "#/components/schemas/TablePart"
+        },
+        {
+          "$ref": "#/components/schemas/GridPart"
+        },
+        {
+          "$ref": "#/components/schemas/ChartPart"
+        },
+        {
+          "$ref": "#/components/schemas/CardPart"
+        },
+        {
+          "$ref": "#/components/schemas/JsonPart"
+        },
+        {
+          "$ref": "#/components/schemas/FilePart"
+        },
+        {
+          "$ref": "#/components/schemas/HtmlPart"
+        },
+        {
+          "$ref": "#/components/schemas/CitationPart"
+        },
+        {
+          "$ref": "#/components/schemas/ErrorPart"
+        },
+        {
+          "$ref": "#/components/schemas/FormPart"
+        }
+      ],
+      "title": "Part"
+    },
+    "type": {
+      "title": "Type",
+      "type": "string"
+    }
+  },
+  "required": [
+    "type",
+    "part"
+  ],
+  "type": "object"
+}

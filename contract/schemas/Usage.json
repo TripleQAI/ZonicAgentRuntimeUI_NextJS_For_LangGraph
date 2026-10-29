@@ -1,0 +1,39 @@
+{
+  "title": "Usage",
+  "additionalProperties": false,
+  "properties": {
+    "cost": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Cost"
+    },
+    "inputTokens": {
+      "default": 0,
+      "title": "Inputtokens",
+      "type": "integer"
+    },
+    "modelCalls": {
+      "default": 0,
+      "title": "Modelcalls",
+      "type": "integer"
+    },
+    "outputTokens": {
+      "default": 0,
+      "title": "Outputtokens",
+      "type": "integer"
+    },
+    "totalTokens": {
+      "default": 0,
+      "title": "Totaltokens",
+      "type": "integer"
+    }
+  },
+  "type": "object"
+}

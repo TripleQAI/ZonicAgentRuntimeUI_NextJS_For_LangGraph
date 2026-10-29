@@ -1,0 +1,122 @@
+{
+  "title": "Run",
+  "additionalProperties": false,
+  "properties": {
+    "agenticWorkflowId": {
+      "title": "Agenticworkflowid",
+      "type": "string"
+    },
+    "error": {
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/RunError"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "finishedAt": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Finishedat"
+    },
+    "mode": {
+      "enum": [
+        "stream",
+        "sync",
+        "async"
+      ],
+      "title": "Mode",
+      "type": "string"
+    },
+    "pendingInterrupts": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Pendinginterrupts",
+      "type": "array"
+    },
+    "queuedAt": {
+      "format": "date-time",
+      "title": "Queuedat",
+      "type": "string"
+    },
+    "result": {
+      "anyOf": [
+        {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Result"
+    },
+    "revision": {
+      "default": "",
+      "title": "Revision",
+      "type": "string"
+    },
+    "runId": {
+      "title": "Runid",
+      "type": "string"
+    },
+    "sessionId": {
+      "title": "Sessionid",
+      "type": "string"
+    },
+    "startedAt": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Startedat"
+    },
+    "status": {
+      "enum": [
+        "queued",
+        "running",
+        "waiting_input",
+        "succeeded",
+        "failed",
+        "cancelled",
+        "timed_out"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "usage": {
+      "anyOf": [
+        {
+          "$ref": "#/components/schemas/Usage"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "runId",
+    "sessionId",
+    "agenticWorkflowId",
+    "status",
+    "mode",
+    "queuedAt"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,14 @@
+{
+  "title": "RunCancelledData",
+  "additionalProperties": false,
+  "properties": {
+    "reason": {
+      "title": "Reason",
+      "type": "string"
+    }
+  },
+  "required": [
+    "reason"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,63 @@
+{
+  "title": "RunInterrupt",
+  "additionalProperties": false,
+  "description": "A pending interrupt of a run (P4-02).",
+  "properties": {
+    "answerSchema": {
+      "additionalProperties": true,
+      "title": "Answerschema",
+      "type": "object"
+    },
+    "expiresAt": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Expiresat"
+    },
+    "interruptId": {
+      "title": "Interruptid",
+      "type": "string"
+    },
+    "kind": {
+      "title": "Kind",
+      "type": "string"
+    },
+    "nodeId": {
+      "title": "Nodeid",
+      "type": "string"
+    },
+    "prompt": {
+      "additionalProperties": true,
+      "title": "Prompt",
+      "type": "object"
+    },
+    "requestedAt": {
+      "format": "date-time",
+      "title": "Requestedat",
+      "type": "string"
+    },
+    "runId": {
+      "title": "Runid",
+      "type": "string"
+    },
+    "uiSchema": {
+      "additionalProperties": true,
+      "title": "Uischema",
+      "type": "object"
+    }
+  },
+  "required": [
+    "interruptId",
+    "runId",
+    "nodeId",
+    "kind",
+    "requestedAt"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,33 @@
+{
+  "title": "SwarmHandoffData",
+  "additionalProperties": false,
+  "properties": {
+    "from": {
+      "title": "From",
+      "type": "string"
+    },
+    "message": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Message"
+    },
+    "to": {
+      "items": {
+        "type": "string"
+      },
+      "title": "To",
+      "type": "array"
+    }
+  },
+  "required": [
+    "from"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,32 @@
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      # The generated client is checked against the LangGraph runtime contract vendored in contract/ by
+      # npm run sync:contract (case U-14), so CI needs no access to the private runtime repository.
+      - run: npm run gen:api:check
+      - run: npm test
+      - run: npm run build
+
+  # No end-to-end job: the suite needs a runtime with fakes, and the LangGraph runtime
+  # (ZonicAgentRuntimeBackend_Python_LangGraph) has none yet. Run it locally with E2E_TARGET=dev or local
+  # (playwright.config.ts).

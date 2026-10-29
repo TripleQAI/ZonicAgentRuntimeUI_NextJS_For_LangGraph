@@ -1,0 +1,13 @@
+{
+  "title": "ErrorEnvelope",
+  "additionalProperties": false,
+  "properties": {
+    "error": {
+      "$ref": "#/components/schemas/ErrorBody"
+    }
+  },
+  "required": [
+    "error"
+  ],
+  "type": "object"
+}

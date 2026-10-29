@@ -1,0 +1,26 @@
+{
+  "title": "RunInput",
+  "additionalProperties": false,
+  "properties": {
+    "attachments": {
+      "anyOf": [
+        {
+          "items": {},
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Attachments"
+    },
+    "text": {
+      "title": "Text",
+      "type": "string"
+    }
+  },
+  "required": [
+    "text"
+  ],
+  "type": "object"
+}
