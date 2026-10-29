@@ -7,6 +7,23 @@ The Zonic Agent Runtime UI (TripleQ AI Agent Run), chat first: a new chat with t
 - Runtime design, client guide and contract review: `../ZonicAgentRuntimeBackend_Python_LangGraph/docs/`
 - Decisions for the UI: [docs/decisions/](docs/decisions/); brand and chat-first layout: [0004](docs/decisions/0004-tripleq-chat-ui-decisions.md)
 
+## Nebius x NVIDIA Global AI Hackathon
+
+This repository is part of the Zonic agent platform, our entry in the Nebius x NVIDIA Global AI Hackathon (Best Apps and Agents track). The platform's agents run on NVIDIA Nemotron models served by Nebius Token Factory. How that is wired, and which model does what, is in the runtime's README: [NVIDIA Nemotron on Nebius Token Factory](https://github.com/TripleQAI/ZonicAgentRuntimeBackend_Python_LangGraph#nvidia-nemotron-on-nebius-token-factory).
+
+**This repository's part:** The chat where people use the Nemotron-powered agents. Nemotron's tokens stream from Token Factory through the runtime into the chat, and each answer's steps show which agent answered and which tools it called.
+
+**Live demo:** the chat at https://dev.tripleq.ai/agent-runtime-lg and the agent builder at https://dev.tripleq.ai/agent-visual-builder-lg/workflows. Both sign in with Amazon Cognito; the test accounts are in the hackathon submission's testing instructions.
+
+| Repository | Role |
+|---|---|
+| [ZonicAgentBuilderUI_NextJS](https://github.com/TripleQAI/ZonicAgentBuilderUI_NextJS) | The visual builder: design a workflow and pick a Nemotron model for each node |
+| [ZonicAgentBuilderServer_FastAPI](https://github.com/TripleQAI/ZonicAgentBuilderServer_FastAPI) | The builder's API: validation, import and export, the node registry and model options |
+| [ZonicAgentRuntimeBackend_Python_LangGraph](https://github.com/TripleQAI/ZonicAgentRuntimeBackend_Python_LangGraph) | Runs the workflows on LangGraph and calls Nemotron through Token Factory |
+| **ZonicAgentRuntimeUI_NextJS_For_LangGraph** (this repository) | The chat app people use the agents in |
+| [ZonicMCPServer_FastAPI](https://github.com/TripleQAI/ZonicMCPServer_FastAPI) | The agents' tools over open data |
+| [ZonicPostgresqlServer_FastAPI](https://github.com/TripleQAI/ZonicPostgresqlServer_FastAPI) | The PostgreSQL gateway every service stores data through (Neon) |
+
 ### Differences from the Node.js contract
 
 The UI follows the LangGraph runtime where its contract differs (its `docs/contract-review.md`):
@@ -55,3 +72,7 @@ The default target, `fakes`, needs a runtime with fakes and a scripted model tha
 Against dev: `E2E_TARGET=dev E2E_BASE_URL=<ui url> E2E_USERNAME=... E2E_PASSWORD=... E2E_DEV_AGENTS='{"chat":{"id":"<workflow id>","name":"<catalog name>"}}' npm run test:e2e`. The specs ask `E2E_DEV_QUESTION` (an answer without tools) and check what any real answer must do; tests that need the scripted workflows are skipped there. Timeouts are longer on dev (`E2E_TIMEOUT_MS`, `E2E_EXPECT_TIMEOUT_MS`).
 
 A multi-turn chat with a real model: `tests/e2e/conversation.spec.ts` holds four turns with the builder's Travel Concierge (named `concierge` in `E2E_DEV_AGENTS`), on dev or against a runtime started on this machine: `E2E_TARGET=local E2E_DEV_AGENTS='{"concierge":{"id":"<workflow id>","name":"Travel Concierge"}}' npx playwright test`. The local target builds this UI on port 3100 against `E2E_RUNTIME_URL` (default `http://127.0.0.1:8000`, the LangGraph runtime's `uv run python -m zonic_runtime.server`) and signs in with the access tokens in `E2E_TOKENS_FILE` (`{"tokens": {"<user>": "<token>"}}`), which the runtime's issuer must accept.
+
+## License
+
+Licensed under the Apache License 2.0; see [LICENSE](LICENSE).
