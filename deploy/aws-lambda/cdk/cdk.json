@@ -4,7 +4,7 @@
     "runtimeUi": {
       "publicUrl": "https://dev.tripleq.ai/agent-runtime-lg/",
       "basePath": "/agent-runtime-lg",
-      "runtimeApiUrl": "https://d2mqmloek8azsa.cloudfront.net",
+      "runtimeApiUrl": "https://d1mcbsx00xuisv.cloudfront.net",
       "oidcIssuer": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_lDBxGGZYh",
       "oidcClientId": "5ecn0u0cv8gm1qfe2d1kfm53jg",
       "oidcScope": "openid email profile",

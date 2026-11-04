@@ -1,6 +1,6 @@
 # ZonicAgentRuntimeUI_NextJS_For_Langgraph
 
-A copy of `ZonicAgentRuntimeUI_NextJS` (2026-10-28) bound to the LangGraph runtime, `ZonicAgentRuntimeBackend_Python_LangGraph`, with its own configuration: port 3001, its own `.env.local` and `AUTH_SECRET`, and `RUNTIME_API_URL` pointing at the LangGraph runtime (deployed dev: https://d2mqmloek8azsa.cloudfront.net). The original stays on the Node.js runtime and port 3000.
+A copy of `ZonicAgentRuntimeUI_NextJS` (2026-10-28) bound to the LangGraph runtime, `ZonicAgentRuntimeBackend_Python_LangGraph`, with its own configuration: port 3001, its own `.env.local` and `AUTH_SECRET`, and `RUNTIME_API_URL` pointing at the LangGraph runtime (deployed dev: https://d1mcbsx00xuisv.cloudfront.net). The original stays on the Node.js runtime and port 3000.
 
 The Zonic Agent Runtime UI (TripleQ AI Agent Run), chat first: a new chat with the agent picker over the composer, chat with true token streaming, sessions, human-input and approval forms, and the run timeline. It talks to the LangGraph runtime only through the runtime's published API contract, vendored in `contract/`.
 
